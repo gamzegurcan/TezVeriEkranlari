@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "793404152034",
+    "firebase_url": "https://yeniyemek-7bf8a-default-rtdb.firebaseio.com",
+    "project_id": "yeniyemek-7bf8a",
+    "storage_bucket": "yeniyemek-7bf8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793404152034:android:3b66b7b97659ecb18ce6bb",
+        "android_client_info": {
+          "package_name": "com.yeni.yemek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793404152034-0vl7eu7vcpkmq7s12m34ra9gln7s3si1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALxItlQ-iFbrVQSVK0_p7VHev6P33Kc-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793404152034-0vl7eu7vcpkmq7s12m34ra9gln7s3si1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
