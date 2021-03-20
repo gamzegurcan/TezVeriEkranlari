@@ -1,10 +1,16 @@
-import 'package:flutter_firebase_get/screen/YemeklerSayfa.dart';
-import 'package:flutter_firebase_get/api/Kategoriler.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_get/models/categorycardwidget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_firebase_get/auth/login_screen.dart';
+import 'package:flutter_firebase_get/auth/registration_screen.dart';
+import 'package:flutter_firebase_get/screens/welcome_screen.dart';
 
-void main() {
+
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -32,47 +38,20 @@ class _AnasayfaState extends State<Anasayfa> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Kategoriler")),
-      ),
-      body: StreamBuilder<Event>(
-        stream: refKategoriler.onValue,
-        builder: (context, event) {
-          if (event.hasData) {
-            var kategoriListesi = <Kategori>[];
-
-            var gelenDegerler = event.data.snapshot.value;
-
-            if (gelenDegerler != null) {
-              gelenDegerler.forEach((key, nesne) {
-                var gelenKategori = Kategori.fromJson(key, nesne);
-                kategoriListesi.add(gelenKategori);
-              });
-            }
-
-            return ListView.builder(
-              itemCount: kategoriListesi.length,
-              itemBuilder: (context, indeks) {
-                var kategori = kategoriListesi[indeks];
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => YemeklerSayfa(
-                                  kategori: kategori,
-                                )));
-                  },
-                  child: CategoryCard(kategori: kategori),
-                );
-              },
-            );
-          } else {
-            return Center();
-          }
-        },
-      ),
+    return MaterialApp(
+      initialRoute: WelcomeScreen.id,
+      routes: {
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+      },
     );
   }
 }
+
+/* Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("Kategoriler")),
+      ),
+      body: CategoriesPage(refKategoriler: refKategoriler),
+    );*/
