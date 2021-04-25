@@ -138,12 +138,14 @@ class _DetaySayfaState extends State<DetaySayfa> {
                     ),
                     TextButton(
                         onPressed: () {
-                          refYemekler
+                          //buraya butonu yazdırıcak fonk gerekli denerken dikkatli olalım, db üzerine başka yerlere ekleme yapılabiliyor ekleme olursa silinsin gereksiz eklemeler.
+                          /* refYemekler
+                          
                               .child(widget.yemek.star_rate)
                               .push()
                               .child(widget.yemek.star_rate)
                               .set(_rating)
-                              .asStream();
+                              .asStream();*/
                         },
                         child: Text("Finish"))
                   ],
