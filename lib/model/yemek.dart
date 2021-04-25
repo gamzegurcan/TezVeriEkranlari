@@ -2,7 +2,7 @@ class Yemekler {
   String yemek_id;
   String Yemek_adi;
   int Suresi;
-  int star_rate;
+  String star_rate;
   String star_counter;
   String star_total;
   String resim;
