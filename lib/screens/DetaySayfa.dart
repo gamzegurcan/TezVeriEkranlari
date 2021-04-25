@@ -1,6 +1,6 @@
 import 'package:flutter_firebase_get/model/yemek.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_database/firebase_database.dart';
 import 'package:rating_bar/rating_bar.dart';
 
 // ignore: must_be_immutable
@@ -14,7 +14,9 @@ class DetaySayfa extends StatefulWidget {
 }
 
 class _DetaySayfaState extends State<DetaySayfa> {
+  var refYemekler = FirebaseDatabase.instance.reference().child("Yemekler");
   double _rating;
+  final name = "star_rate";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,7 +136,16 @@ class _DetaySayfaState extends State<DetaySayfa> {
                       'Rating : $_rating',
                       style: Theme.of(context).textTheme.subtitle1,
                     ),
-                    TextButton(onPressed: () {}, child: Text("Finish"))
+                    TextButton(
+                        onPressed: () {
+                          refYemekler
+                              .child(widget.yemek.star_rate)
+                              .push()
+                              .child(widget.yemek.star_rate)
+                              .set(_rating)
+                              .asStream();
+                        },
+                        child: Text("Finish"))
                   ],
                 );
               });

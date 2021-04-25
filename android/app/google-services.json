@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:793404152034:android:3b66b7b97659ecb18ce6bb",
+        "mobilesdk_app_id": "1:793404152034:android:ef25eb50c273c9308ce6bb",
         "android_client_info": {
           "package_name": "com.yeni.yemek"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "793404152034-9e125n4lu42etdb5b448h39ni3hvmu31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yeni.yemek",
+            "certificate_hash": "63f825550dae35cff6c653199627abcf4f8b6124"
+          }
+        },
         {
           "client_id": "793404152034-0vl7eu7vcpkmq7s12m34ra9gln7s3si1.apps.googleusercontent.com",
           "client_type": 3

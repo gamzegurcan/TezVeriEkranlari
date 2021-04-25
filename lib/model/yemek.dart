@@ -2,9 +2,9 @@ class Yemekler {
   String yemek_id;
   String Yemek_adi;
   int Suresi;
-  int star_rate;
-  int star_counter;
-  int star_total;
+  String star_rate;
+  String star_counter;
+  String star_total;
   String resim;
   String kategori_ad;
   String Tarif;
@@ -31,9 +31,9 @@ class Yemekler {
       json["kategori_ad"] as String,
       json["Tarif"] as String,
       json["Malzemesi"] as String,
-      json["star_counter"] as int,
-      json["star_rate"] as int,
-      json["star_rate"] as int,
+      json["star_counter"] as String,
+      json["star_rate"] as String,
+      json["star_rate"] as String,
     );
   }
 }
