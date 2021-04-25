@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_get/screens/YemeklerSayfa.dart';
-import 'package:flutter_firebase_get/api/Kategoriler.dart';
+import 'package:flutter_firebase_get/model/Kategoriler.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-import 'package:flutter_firebase_get/models/categorycardwidget.dart';
+import 'package:flutter_firebase_get/widgets/categorycardwidget.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({

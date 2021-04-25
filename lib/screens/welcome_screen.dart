@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_get/auth/google_signin.dart';
 import '../auth/login_screen.dart';
 import '../auth/registration_screen.dart';
-import 'package:flutter_firebase_get/models/rounded_button.dart';
+import 'package:flutter_firebase_get/widgets/rounded_button.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -21,9 +22,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     super.initState();
 
     controller =
-        AnimationController(duration: Duration(seconds: 10), vsync: this);
+        AnimationController(duration: Duration(seconds: 5), vsync: this);
     animation =
-        ColorTween(begin: Colors.blue, end: Colors.purple).animate(controller);
+        ColorTween(begin: Colors.blue, end: Colors.black).animate(controller);
     controller.forward();
 
     controller.addListener(() {
@@ -70,19 +71,20 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               height: 48.0,
             ),
             RoundedButton(
-              title: 'LOGIN',
+              title: 'GİRİŞ',
               colour: Colors.lightBlueAccent,
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
             ),
             RoundedButton(
-              title: 'REGISTER',
+              title: 'KAYIT',
               colour: Colors.lightBlueAccent,
               onPressed: () {
                 Navigator.pushNamed(context, RegistrationScreen.id);
               },
             ),
+            GoogleSignInButton(),
           ],
         ),
       ),

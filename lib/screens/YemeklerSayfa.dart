@@ -1,9 +1,9 @@
 import 'package:flutter_firebase_get/screens/DetaySayfa.dart';
-import 'package:flutter_firebase_get/api/Kategoriler.dart';
-import 'package:flutter_firebase_get/api/yemek.dart';
+import 'package:flutter_firebase_get/model/Kategoriler.dart';
+import 'package:flutter_firebase_get/model/yemek.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_get/models/yemekcardwidget.dart';
+import 'package:flutter_firebase_get/widgets/yemekcardwidget.dart';
 
 class YemeklerSayfa extends StatefulWidget {
   Kategori kategori;

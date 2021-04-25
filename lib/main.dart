@@ -5,9 +5,6 @@ import 'package:flutter_firebase_get/auth/login_screen.dart';
 import 'package:flutter_firebase_get/auth/registration_screen.dart';
 import 'package:flutter_firebase_get/screens/welcome_screen.dart';
 
-
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -39,6 +36,7 @@ class _AnasayfaState extends State<Anasayfa> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
